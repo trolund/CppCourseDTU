@@ -4,47 +4,38 @@
 
 using namespace std;
 
-vector<int> getNumbers(string s){
-    string delimiter = " ";
-    vector<int> result;
-    size_t pos = 0;
-    string token;
-
-    while ((pos = s.find(delimiter)) != string::npos) {
-        token = s.substr(0, pos);
-        result.push_back(stoi(token));
-        s.erase(0, pos + delimiter.length());
-    }
-
-    token = s.substr(0, pos);
-    result.push_back(stoi(token));
-
-    return result;
-}
-
 int main() {
     string input;
     getline(cin, input);
 
-    vector<int> data = getNumbers(input);
+    string delimiter = " ";
+    vector<double> result;
+    size_t pos = 0;
+    string token;
 
-    data.erase(data.begin());
 
-    bool sorted = true;
-
-    if(data.size() > 1) {
-        for (int i = 0; i < data.size() - 1; ++i) {
-            if (data[i] > data[i + 1]) {
-                cout << "UNSORTED";
-                sorted = false;
-                break;
-            }
-        }
+    while ((pos = input.find(delimiter)) != string::npos) {
+        token = input.substr(0, pos);
+        result.push_back(stod(token));
+        input.erase(0, pos + delimiter.length());
     }
 
-    if(sorted){
-        cout << "SORTED";
+    token = input.substr(0, pos);
+    result.push_back(stod(token));
+
+    result.erase(result.begin());
+
+    std::size_t const half_size = result.size() / 2;
+    std::vector<double> x(result.begin(), result.begin() + half_size);
+    std::vector<double> y(result.begin() + half_size, result.end());
+
+    double sum = 0;
+
+    for (int i = 0; i < x.size(); ++i) {
+        sum += x[i] * y[i];
     }
+
+    cout << sum;
 
     return 0;
 }
