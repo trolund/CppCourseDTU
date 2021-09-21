@@ -2,6 +2,9 @@
 #include <vector>
 #include <math.h>
 
+#define NROWS 12
+#define NCOLS 16
+
 using namespace std;
 
 typedef enum { wood, stone } material;
@@ -16,12 +19,12 @@ struct player {
     int x, y;
 };
 
-void init(tile **playground, int n, int m) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++){
+void init(tile playground[NROWS][NCOLS]) {
+    for (int i = 0; i < NROWS; i++) {
+        for (int j = 0; j < NCOLS; j++){
             playground[i][j].x = j;
             playground[i][j].y = i;
-            playground[i][j].isWall = (j==0 || i==(n-1) || (i==0 && j!=3) || j==(m-1));
+            playground[i][j].isWall = (j==0 || i==(NROWS-1) || (i==0 && j!=3) || j==(NCOLS-1));
             if (playground[i][j].isWall) {
                 playground[i][j].type = stone;
             }
@@ -32,9 +35,9 @@ void init(tile **playground, int n, int m) {
     }
 }
 
-void printState(tile **playground, player* p, int n, int m){
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++){
+void printState(tile playground[NROWS][NCOLS], player* p){
+    for (int i = 0; i < NROWS; i++) {
+        for (int j = 0; j < NCOLS; j++){
             tile current = playground[i][j];
 
             if(p->y == i && p->x == j){
@@ -49,7 +52,7 @@ void printState(tile **playground, player* p, int n, int m){
     }
 }
 
-bool stepOk(tile **playground, int x, int y){
+bool stepOk(tile playground[NROWS][NCOLS], int x, int y){
     if(playground[y][x].isWall){
         return false;
     }
@@ -59,33 +62,17 @@ bool stepOk(tile **playground, int x, int y){
 int main() {
     player* p = new player;
 
-    int n = 0;
-    int m = 0;
+    p->x = 5;
+    p->y = 5;
+
+    tile playground[NROWS][NCOLS];
+    init(playground);
 
     string input;
-    for (int i = 0; i < 2; i++) {
-        getline(cin, input);
-
-        if(i == 0){
-            string delimiter = " ";
-            n = stoi(input.substr(0, input.find(delimiter)));
-            m = stoi(input.substr(input.find(delimiter), input.size()));
-        }
-    }
-
-    p->x = m/2;
-    p->y = n/2;
-
-    tile **playground = new tile*[n];
-
-    for (int i = 0; i < m; i++) {
-        playground[i] = new tile[m];
-    }
-
-    init(playground, n, m);
+    getline(cin, input);
 
     for (int i = 0; i < input.size(); i++) {
-        printState(playground, p, n, m);
+        printState(playground, p);
 
         char command = input[i];
 
