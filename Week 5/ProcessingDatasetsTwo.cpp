@@ -61,28 +61,16 @@ int main() {
     vector<char> keys = getKeys(m);
     sort(keys.begin(), keys.end());
 
-    vector<int>* a = m.find(keys[0])->second;
-    vector<int>* b = m.find(keys[1])->second;
-
-    int sum = 0;
-
     for (int i = 0; i < 100; ++i) {
-        if(a->size() > i && b->size() > i){
-            int x = a->at(i);
-            int y = b->at(i);
-            sum += x * y;
-        }else if(a->size() > i && b->size() < i){
-            int x = a->at(i);
-            int y = 0;
-            sum += x * y;
-        }else if(a->size() < i && b->size() > i){
-            int x = 0;
-            int y = b->at(i);
-            sum += x * y;
+        for (char k : keys) {
+            vector<int>* x = m.find(k)->second;
+            if(i < x->size()){
+                int element = x->at(i);
+                cout <<  element << " ";
+            }
+
         }
     }
-
-    cout << sum;
 
     return 0;
 }

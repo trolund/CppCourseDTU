@@ -59,30 +59,17 @@ int main() {
     getline(cin, input);
     map<char, vector<int>*> m = getNumbers(input);
     vector<char> keys = getKeys(m);
+
     sort(keys.begin(), keys.end());
 
-    vector<int>* a = m.find(keys[0])->second;
-    vector<int>* b = m.find(keys[1])->second;
+    for (char k : keys) {
+        vector<int>* values = m.find(k)->second;
+        sort(values->begin(), values->end());
 
-    int sum = 0;
-
-    for (int i = 0; i < 100; ++i) {
-        if(a->size() > i && b->size() > i){
-            int x = a->at(i);
-            int y = b->at(i);
-            sum += x * y;
-        }else if(a->size() > i && b->size() < i){
-            int x = a->at(i);
-            int y = 0;
-            sum += x * y;
-        }else if(a->size() < i && b->size() > i){
-            int x = 0;
-            int y = b->at(i);
-            sum += x * y;
+        for (int v : *values) {
+            cout << v << " ";
         }
     }
-
-    cout << sum;
 
     return 0;
 }
