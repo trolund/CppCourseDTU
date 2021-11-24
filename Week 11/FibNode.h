@@ -11,7 +11,7 @@ using namespace std;
 
 class FibNode {
 public:
-    explicit FibNode(unsigned int value);
+    FibNode(unsigned int value);
 
     FibNode(unsigned int value,
             FibNode *left,
