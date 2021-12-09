@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troelslund/CLionProjects/C++Course/ReExam May 2021/ex3/ex03-library.cpp
+iostream
+-
+ex03-library.h
+/Users/troelslund/CLionProjects/C++Course/ReExam May 2021/ex3/ex03-library.h
+
+/Users/troelslund/CLionProjects/C++Course/ReExam May 2021/ex3/ex03-library.h
+string
+-
+vector
+-
+map
+-
+

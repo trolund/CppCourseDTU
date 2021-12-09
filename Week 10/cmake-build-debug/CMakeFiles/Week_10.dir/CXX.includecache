@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troelslund/CLionProjects/C++Course/Week 10/doubly-linked.cpp
+doubly-linked.h
+/Users/troelslund/CLionProjects/C++Course/Week 10/doubly-linked.h
+
+/Users/troelslund/CLionProjects/C++Course/Week 10/doubly-linked.h
+iostream
+-
+

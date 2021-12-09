@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troelslund/CLionProjects/C++Course/ReExam May 2021/ex1/ex01-library.cpp
+iostream
+-
+ex01-library.h
+/Users/troelslund/CLionProjects/C++Course/ReExam May 2021/ex1/ex01-library.h
+
+/Users/troelslund/CLionProjects/C++Course/ReExam May 2021/ex1/ex01-library.h
+

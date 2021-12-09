@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troelslund/CLionProjects/C++Course/Week7/vector2d.cpp
+vector2d.h
+/Users/troelslund/CLionProjects/C++Course/Week7/vector2d.h
+cmath
+-
+iostream
+-
+
+/Users/troelslund/CLionProjects/C++Course/Week7/vector2d.h
+

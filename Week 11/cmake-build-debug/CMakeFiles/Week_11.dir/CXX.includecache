@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troelslund/CLionProjects/C++Course/Week 11/FibNode.h
+iostream
+-
+
+/Users/troelslund/CLionProjects/C++Course/Week 11/main.cpp
+iostream
+-
+vector
+-
+FibNode.h
+/Users/troelslund/CLionProjects/C++Course/Week 11/FibNode.h
+

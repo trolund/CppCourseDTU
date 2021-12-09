@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/troelslund/CLionProjects/C++Course/week8/main.cpp
+iostream
+-
+vector
+-
+cmath
+-
+shapes.h
+/Users/troelslund/CLionProjects/C++Course/week8/shapes.h
+
+/Users/troelslund/CLionProjects/C++Course/week8/shapes.cpp
+shapes.h
+/Users/troelslund/CLionProjects/C++Course/week8/shapes.h
+
+/Users/troelslund/CLionProjects/C++Course/week8/shapes.h
+math.h
+-
+
